@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (!isset($_SESSION['joueur'])) {
+	header("Location:pagedeconnex.php");
+}
 ?>
 <!DOCTYPE html>
 <html>

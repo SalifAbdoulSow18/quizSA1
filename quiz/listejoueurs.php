@@ -165,7 +165,7 @@ session_start();
 		<div class="milieu">
 			<div class="first">
 				<h2> CREER ET PARAMETRER VOS QUIZZ</h2>
-		<a href="Deconnexion.php"><button>Deconnexion</button></a>
+	<button>Deconnexion</button>
 			</div>
 			<div class="milieu1">
 				<div class="limg">

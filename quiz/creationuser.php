@@ -160,20 +160,31 @@ if (isset($_POST['submit'])) {
 	.bas h4{
 		float: left;
 	}
-	.bas button{
-		width: 150px;
-		height:35px;
+	input[type='file']{
 		position: relative;
 		left: 35%;
-		top: 10px;
-		background-color:  #51BFD0;
-         color: white;
+		bottom: 45px;
+		opacity: 0;
+		width: 0;
+		 	}
+	.bas label{
+		width: 150px;
+		height: 30px;
+		text-align: center;
+		position: relative;
+		left: 35%;
+		bottom: 45px;
+		background-color: #51BFD0;
+		color: #fff;
+		font-size: 20px;
+		border-radius: 2px;
 	}
 	.bas1 input{
 		width: 150px;
 		height:40px;		
 		position: relative;
 		left: 5%;
+		bottom: 100px;
 		background-color:  #51BFD0;
 		color: white;
 	}
@@ -218,8 +229,8 @@ if (isset($_POST['submit'])) {
 					<input style="border: 2px solid  #51BFD0;" type="password" name="confpass">
                        <div class="bas">
 					<h4>Avatar</h4>
-					<button>Choisir un Fichier</button>
-						</div>
+					<label for="file">choisir un fichier</label>
+					<input type="file" name="file" id="file">						</div>
 						<div class="bas1">
 			<input type="submit" name="submit" value="Creer un Compte">						</div>
 
