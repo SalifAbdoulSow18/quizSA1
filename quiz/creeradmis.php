@@ -1,16 +1,37 @@
 <?php
 session_start();
+
+if (!isset($_SESSION['admis'])) {
+	header("Location:pagedeconnex.php");
+}
+
 if (isset($_POST['submit'])) {
 	if (empty($_POST['nom']) || empty($_POST['prenom']) || empty($_POST['login']) || empty($_POST['password']) || empty($_POST['confpass'])) {
 		$erreur= "Your message has not been sent. Please complete all required!!!";
 	}
 	else{
+
+			  $format=['image/png','image/jpg','image/jpeg'];
+if (in_array($_FILES['file']['type'], $format)) {
+	$array=explode('.', $_FILES['file']['name']);
+	$filename=date('YmdHis').".".$array[sizeof($array)-1];
+	if (move_uploaded_file($_FILES['file']['tmp_name'], './imagesquiz/UserImages/'.$filename)) {
+	$photo= './imagesquiz/UserImages/'.$filename;
+	
 		$tab=array();
 		$tab['nom']=$_POST['nom'];
 		$tab ['prenom']=$_POST['prenom'];
 		$tab ['login']=$_POST['login'];
 		$tab ['pass']=$_POST['password'];
 		$confpass=$_POST['confpass'];
+		$tab['avatar']=$photo;
+
+	}
+
+	else{
+		$erreur="format incorrect";
+	}
+}
 
 		 $js_nde=file_get_contents("base_joueur.json");
 		  $jsexit_nde=json_decode($js_nde,true);
@@ -282,7 +303,7 @@ if (isset($_POST['submit'])) {
 			<div class="milieu1">
 				<div class="limg">
 					<div class="image">
-						<img src="./imagesquiz/img5.jpg">
+				<img src="<?php echo $_SESSION['admis']['avatar']; ?>">
 		<h3> <?= $_SESSION['admis']['prenom'] ?> <br> <?= $_SESSION['admis']['nom'] ?></h3>
 					</div>
                     <div id="texte">
@@ -297,7 +318,7 @@ if (isset($_POST['submit'])) {
 						<h2>S'INSCRIRE</h2>
 					<h4>Pour proposer des quizz</h4>
 					<hr>
-					<form method="POST">
+					<form action="creeradmis.php" method="POST" enctype="multipart/form-data">
 					<label>Prenom</label>
 					<input type="text" name="prenom">
 					
@@ -316,14 +337,14 @@ if (isset($_POST['submit'])) {
                        <div class="bas">
 					<h4>Avatar</h4>
 				<label for="file">Choisir un fichier</label>
-					<input type="file" name="file" id="file">						</div>
+					<input type="file" name="file" id="file"  accept=".png, .jpeg, .jpg" onchange="loadFile(event)">						</div>
 						<div class="bas1">
 			<input type="submit" name="submit" value="Creer un Compte">					</div>
 					</form>
 
 					</div>
 					<div class="gauche">
-						<img src="./imagesquiz/img5.jpg">
+						<img src="./imagesquiz/img5.jpg"  alt="avatar" id="output">
 						<h4 style="position: relative; top: 10px;"><center>Avatar Admis</center></h4>
 
 
@@ -352,5 +373,17 @@ if (isset($_POST['submit'])) {
 	</div>
 </div>
 </div>
+
+<script>
+  var loadFile = function(event) {
+    var reader = new FileReader();
+    reader.onload = function(){
+      var output = document.getElementById('output');
+      output.src = reader.result;
+    };
+    reader.readAsDataURL(event.target.files[0]);
+  };
+</script>
+
 </body>
 </html>

@@ -68,6 +68,7 @@ if (!isset($_SESSION['joueur'])) {
 		.image img{
 		width: 15%;
 		height: 80%;
+		border-radius: 50%;
 		position: relative;
 		}
         .image h4{
@@ -118,7 +119,7 @@ if (!isset($_SESSION['joueur'])) {
 		<div class="milieu">
 			<div class="first">
 				<div class="image">
-						<img src="./imagesquiz/img5.jpg">
+						<img src="<?php echo $_SESSION['joueur']['avatar']; ?>">
 <h4><?= $_SESSION['joueur']['prenom'] ?><?= $_SESSION['joueur']['nom'] ?></h4>
  				<h3> BIENVENUE SUR LA PLATEFORME DE JEU DE QUIZZ
 JOUER ET TESTER VOTRE NIVEAU DE CULTURE GENERALE </h3>

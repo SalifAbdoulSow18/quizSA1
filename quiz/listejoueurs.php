@@ -1,6 +1,9 @@
 
 <?php
 session_start();
+if (!isset($_SESSION['admis'])) {
+	header("Location:pagedeconnex.php");
+}
 ?>
 
 
@@ -209,7 +212,7 @@ session_start();
 			<div class="milieu1">
 				<div class="limg">
 					<div class="image">
-						<img src="./imagesquiz/img5.jpg">
+						<img src="<?php echo $_SESSION['admis']['avatar']; ?>">
 	<h3> <?= $_SESSION['admis']['prenom'] ?> <br> <?= $_SESSION['admis']['nom'] ?></h3>
 					</div>
                     <div id="texte">
