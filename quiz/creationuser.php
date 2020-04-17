@@ -54,7 +54,7 @@ if (in_array($_FILES['file']['type'], $format)) {
 		$succes= "Thank you, Your message has been sent successfully!!! ";
 		
 		 $jsexit[]=$tab;
-		 $jsrenvoi=json_encode($jsexit);
+		 $jsrenvoi=json_encode($jsexit,JSON_PRETTY_PRINT);
 		  file_put_contents('base_joueur.json', $jsrenvoi);
 		}	
 	}

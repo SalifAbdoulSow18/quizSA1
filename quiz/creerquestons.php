@@ -165,7 +165,7 @@ background-image: linear-gradient(white 3px, #51BFD0);	}
      	float: right;
      	border: 1px solid white;
      	position: relative;
-     	bottom: 47%;
+     	bottom: 53%;
      	right: 1%;
      }
      .gauch h2{
@@ -372,6 +372,7 @@ background-image: linear-gradient(white 3px, #51BFD0);	}
                     <a style="text-decoration: none;" href="creeradmis.php"><input class="text1" type="text" name="creadmis" placeholder="Creer Admis"></a>
                     <a style="text-decoration: none;" href="listejoueurs.php"><input class="text" type="text" name="listjoueur" placeholder="Liste Joueur"></a>
                     	<input class="text2" type="text" name="crequiz" placeholder="Creer Question">
+                    	 <a style="text-decoration: none;" href="chartbilan.php"><input class="text" type="text" name="crequiz" placeholder="Bilan Users"></a>
                     </div>
 				</div>
 				<div class="gauch">

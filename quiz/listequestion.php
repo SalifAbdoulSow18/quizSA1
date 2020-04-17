@@ -31,6 +31,29 @@ $data_joueur=file_get_contents("questions.json");
 			
 			$IndiceDeDepart=($pageactuelle-1)*$NbrParPage;				
 								
+if (isset($_POST['submit'])) {
+if (!empty($_POST['num'])) {
+	$tab=array();
+	$tab['NQuestionParJeu']=$_POST['num'];
+	if ($tab['NQuestionParJeu']>=5) {
+
+			
+		   $jsrenvoi=json_encode($tab,JSON_PRETTY_PRINT);
+		  file_put_contents('quizParJeu.json', $jsrenvoi);
+
+		}
+		else{
+			 echo  ' <script> alert("mettez un nombre superieur a 5!!!")</script>';
+
+		}
+
+		$qui=file_get_contents('quizParJeu.json');
+		$array_qui=json_decode($qui, true);
+		foreach ($array_qui as $value) {
+			$_SESSION['NbrGame']=$value;
+		}
+}
+}
 
 
 ?>
@@ -40,6 +63,7 @@ $data_joueur=file_get_contents("questions.json");
 <head>
 	<title>1. Liste Questions</title>
 </head>
+<div id="erreur"></div>
 <body>
 <style>
     body{
@@ -178,7 +202,7 @@ background-image: linear-gradient(white 3px, #51BFD0);	}
 		border-radius: 5px 5px 5px 5px;
 		background-color: white;
 		position: relative;
-        bottom: 65%;
+        bottom: 75%;
 	}
 	.nbr{
 		width: 100%;
@@ -261,13 +285,16 @@ background-image: linear-gradient(white 3px, #51BFD0);	}
                      <a style="text-decoration: none;" href="creeradmis.php"><input class="text1" type="text" name="creadmis" placeholder="Creer Admis"></a>
                       <a style="text-decoration: none;" href="listejoueurs.php">	<input class="text" type="text" name="listjoueur" placeholder="Liste Joueur"></a>
                       <a style="text-decoration: none;" href="creerquestons.php"><input class="text1" type="text" name="crequiz" placeholder="Creer Question"></a>
+                       <a style="text-decoration: none;" href="chartbilan.php"><input class="text" type="text" name="crequiz" placeholder="Bilan Users"></a>
                     </div>
 				</div>
 				<div class="quiz">
 					<div class="nbr">
+						<form method="POST" id="NbrQuiz">
 						<label>Nbre de question/jeu</label>
-						<input type="text" name="num">
-						<input style="background-color: blue;" type="submit" name="submit" value="OK">
+						<input type="text" name="num" id="num"  value="<?= $_SESSION['NbrGame']?>" required>
+						<input style="background-color: blue;" type="submit" name="submit" value="OK" id="ok">
+						</form>
 					</div>
 					<div class="quiztext">
 						<?php
@@ -335,5 +362,23 @@ background-image: linear-gradient(white 3px, #51BFD0);	}
 	</div>
 </div>
 </div>
+
+<script>
+ const name=document.getElementById("num");
+ const form=document.getElementById('NbrQuiz');
+ const errorElement=document.getElementById('erreur');
+
+ form.addEventListener('submit',(0))=>{
+ 	let messages=[];
+ 	if (name.value===''|| name.value==null){
+ 		messages.push('champ obligatoire');
+ 	}
+ 	if (messages.length>0) {
+ 		e.preventDefault();
+ 		errorElement.innerText=messages.join(',')
+ 	}
+ }
+
+</script>
 </body>
 </html>

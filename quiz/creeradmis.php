@@ -62,7 +62,7 @@ if (in_array($_FILES['file']['type'], $format)) {
 	$succes= "Thank you, Your message has been sent successfully!!! ";
 		
 		 $jsexit[]=$tab;
-		 $jsrenvoi=json_encode($jsexit);
+		 $jsrenvoi=json_encode($jsexit,JSON_PRETTY_PRINT);
 		  file_put_contents('base.json', $jsrenvoi);
 		  		}	  		
 	}
@@ -219,7 +219,7 @@ background-image: linear-gradient(white 3px, #51BFD0);	}
 		background-color: white;
 		border-radius: 5px 5px 5px 5px;
 		position: relative;
-        bottom: 55%;
+        bottom: 65%;
 	}
 	.droit{
 		width: 60%;
@@ -313,6 +313,7 @@ background-image: linear-gradient(white 3px, #51BFD0);	}
                     	<input class="text2" type="text" name="creadmis" placeholder="Creer Admis">
                      <a style="text-decoration: none;" href="listejoueurs.php"><input class="text" type="text" name="listjoueur" placeholder="Liste Joueur"></a>
                     <a style="text-decoration: none;" href="creerquestons.php"><input class="text1" type="text" name="crequiz" placeholder="Creer Question"></a>
+                     <a style="text-decoration: none;" href="chartbilan.php"><input class="text" type="text" name="crequiz" placeholder="Bilan Users"></a>
                     </div>
 				</div>
 				<div class="quiz">
