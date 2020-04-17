@@ -113,7 +113,7 @@ if (isset($_POST['submit'])) {
 		margin: 15px;
 		margin-left: 30px;
 		border-radius: 0px 5px 5px 0px;
-		background-image: url(ic-login.png);
+		background-image: url(./imagesquiz/ic-login.png);
 		background-repeat: no-repeat;
 		background-position: right;
 		background-size: 20px;
@@ -125,7 +125,7 @@ if (isset($_POST['submit'])) {
 		margin: 15px;
 		margin-left: 30px;
 		border-radius: 0px 5px 5px 0px;
-		background-image: url(ic-password.png);
+		background-image: url(./imagesquiz/ic-password.png);
 		background-repeat: no-repeat;
 		background-position: right;
 		background-size: 20px;
@@ -157,11 +157,11 @@ if (isset($_POST['submit'])) {
 <div class="general">
 <div class="contenant">
 	<div class="haut">
-		<img src="logo-QuizzSA.png">
+		<img src="./imagesquiz/logo-QuizzSA.png">
 		<h1>Le plaisir de jouer</h1>
 	</div>
 	<div class="contenue">
-		<img src="img-bg.jpg">
+		<img src="./imagesquiz/img-bg.jpg">
 		<div class="milieu">
 			<div class="first">
 				<h3> Login Form</h3>

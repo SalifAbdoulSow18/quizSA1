@@ -118,7 +118,7 @@ session_start();
 		width: 98%;
 		height: 50px;
 		border-radius: 0px 5px 5px 0px;
-		background-image: url(ic-liste.png);
+		background-image: url(./imagesquiz/ic-liste.png);
 		background-repeat: no-repeat;
 		background-position: right;
 	}
@@ -126,7 +126,7 @@ session_start();
 		width: 98%;
 		height: 50px;
 		border-radius: 0px 5px 5px 0px;
-		background-image: url(ic-ajout.png);
+		background-image: url(./imagesquiz/ic-ajout.png);
 		background-repeat: no-repeat;
 		background-position: right;
 	}
@@ -134,7 +134,7 @@ session_start();
 		width: 98%;
 		height: 50px;
 		border-radius: 0px 5px 5px 0px;
-		background-image: url(ic-ajout-active.png);
+		background-image: url(./imagesquiz/ic-ajout-active.png);
 		background-repeat: no-repeat;
 		background-position: right;
 	}
@@ -240,11 +240,11 @@ session_start();
 <div class="general">
 <div class="contenant">
 	<div class="haut">
-		<img src="logo-QuizzSA.png">
+		<img src="./imagesquiz/logo-QuizzSA.png">
 		<h1>Le plaisir de jouer</h1>
 	</div>
 	<div class="contenue">
-		<img src="img-bg.jpg">
+		<img src="./imagesquiz/img-bg.jpg">
 		<div class="milieu">
 			<div class="first">
 				<h2> CREER ET PARAMETRER VOS QUIZZ</h2>
@@ -254,7 +254,7 @@ session_start();
 				
 				<div class="limg">
 					<div class="image">
-						<img src="img5.jpg">
+						<img src="./imagesquiz/img5.jpg">
 		<h3> <?= $_SESSION['admis']['prenom'] ?> <br> <?= $_SESSION['admis']['nom'] ?></h3>
 					</div>
                     <div id="texte">
@@ -280,7 +280,7 @@ session_start();
 					<select>
 						<option>Donner le type de reponse</option>
 					</select>
-					<img src="ic-ajout-réponse.png">
+					<img src="./imagesquiz/ic-ajout-réponse.png">
 					</div>
 					<div class="repon">
 				<label style="width: 15%; font-size: 18px;">Reponse 1</label>
@@ -289,7 +289,7 @@ session_start();
 					<input style="width: 5%; height: 40%; position: relative;
 					top: 7%;"  type="checkbox" name="one">
 					<input  style="width: 5%; height: 40%; position: relative;top: 7%;" type="radio" name="two">
-					<img  style="width: 5%; height: 40%; position: relative;top: 7%;" src="ic-supprimer.png">
+					<img  style="width: 5%; height: 40%; position: relative;top: 7%;" src="./imagesquiz/ic-supprimer.png">
 					</div>
 					<div class="save">
 						<button>Enregistrer</button>

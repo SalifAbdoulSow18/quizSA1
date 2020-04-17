@@ -21,12 +21,12 @@ $tabcouleur=["bleu"=>"#0000FF","rouge"=>"#FF0000","jaune"=>"#FFFF00","gris"=>"#0
 <form  method="POST">
  <div> 
  <label>Taille de la matrice carree</label><br>
- <img src="icone1.png" style="background-color:blue;border-top-left-radius:12px;width:7.2%;border-bottom-left-radius:12px; float:left;">
+ <img src="./icones/icone1.png" style="background-color:blue;border-top-left-radius:12px;width:7.2%;border-bottom-left-radius:12px; float:left;">
  <input class="saisi" type="text" name="matrice">
  </div>
    <div> 
    <label>Select C1</label><br>
-   <img src="icone2&3.png" style="background-color:red;border-top-left-radius:12px;width:8%;border-bottom-left-radius:12px; float:left;  margin-top:10px">
+   <img src="./icones/icone2&3.png" style="background-color:red;border-top-left-radius:12px;width:8%;border-bottom-left-radius:12px; float:left;  margin-top:10px">
    <select name="C1" id="color1">
   <?php
   foreach ($tabcouleur as $key => $value) {
@@ -38,7 +38,7 @@ $tabcouleur=["bleu"=>"#0000FF","rouge"=>"#FF0000","jaune"=>"#FFFF00","gris"=>"#0
     </select></div>
    <div> 
    <label>Select C2</label><br>
-   <img src="icone2&3.png" style="background-color:red;border-top-left-radius:12px;width:8%;border-bottom-left-radius:12px; float:left;  margin-top:10px">
+   <img src="./icones/icone2&3.png" style="background-color:red;border-top-left-radius:12px;width:8%;border-bottom-left-radius:12px; float:left;  margin-top:10px">
    <select name="C2" id="color2">
    <?php
   foreach ($tabcouleur as $key => $value) {
@@ -48,7 +48,7 @@ $tabcouleur=["bleu"=>"#0000FF","rouge"=>"#FF0000","jaune"=>"#FFFF00","gris"=>"#0
     </select></div>
    <div> 
    <label>Position</label><br>
-   <img src="interrogation.png" style="background-color:grey;border-top-left-radius:12px;width:8%;border-bottom-left-radius:12px; float:left; margin-top:10px">
+   <img src="./icones/interrogation.png" style="background-color:grey;border-top-left-radius:12px;width:8%;border-bottom-left-radius:12px; float:left; margin-top:10px">
    <select name="position" id="pos">
    <option value="bas">bas</option>
    <option value="haut">haut</option>

@@ -166,7 +166,7 @@ if (isset($_POST['submit'])) {
 		width: 98%;
 		height: 50px;
 		border-radius: 0px 5px 5px 0px;
-		background-image: url(ic-liste.png);
+		background-image: url(./imagesquiz/ic-liste.png);
 		background-repeat: no-repeat;
 		background-position: right;
 	}
@@ -174,7 +174,7 @@ if (isset($_POST['submit'])) {
 		width: 98%;
 		height: 50px;
 		border-radius: 0px 5px 5px 0px;
-		background-image: url(ic-ajout.png);
+		background-image: url(./imagesquiz/ic-ajout.png);
 		background-repeat: no-repeat;
 		background-position: right;
 	}
@@ -182,7 +182,7 @@ if (isset($_POST['submit'])) {
 		width: 98%;
 		height: 50px;
 		border-radius: 0px 5px 5px 0px;
-		background-image: url(ic-ajout-active.png);
+		background-image: url(./imagesquiz/ic-ajout-active.png);
 		background-repeat: no-repeat;
 		background-position: right;
 	}
@@ -269,11 +269,11 @@ if (isset($_POST['submit'])) {
 <div class="general">
 <div class="contenant">
 	<div class="haut">
-		<img src="logo-QuizzSA.png">
+		<img src="./imagesquiz/logo-QuizzSA.png">
 		<h1>Le plaisir de jouer</h1>
 	</div>
 	<div class="contenue">
-		<img src="img-bg.jpg">
+		<img src="./imagesquiz/img-bg.jpg">
 		<div class="milieu">
 			<div class="first">
 				<h2> CREER ET PARAMETRER VOS QUIZZ</h2>
@@ -282,7 +282,7 @@ if (isset($_POST['submit'])) {
 			<div class="milieu1">
 				<div class="limg">
 					<div class="image">
-						<img src="img5.jpg">
+						<img src="./imagesquiz/img5.jpg">
 		<h3> <?= $_SESSION['admis']['prenom'] ?> <br> <?= $_SESSION['admis']['nom'] ?></h3>
 					</div>
                     <div id="texte">
@@ -323,7 +323,7 @@ if (isset($_POST['submit'])) {
 
 					</div>
 					<div class="gauche">
-						<img src="img5.jpg">
+						<img src="./imagesquiz/img5.jpg">
 						<h4 style="position: relative; top: 10px;"><center>Avatar Admis</center></h4>
 
 

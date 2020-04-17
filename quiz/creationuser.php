@@ -197,11 +197,11 @@ if (isset($_POST['submit'])) {
 <div class="general">
 <div class="contenant">
 	<div class="haut">
-		<img src="logo-QuizzSA.png">
+		<img src="./imagesquiz/logo-QuizzSA.png">
 		<h1>Le plaisir de jouer</h1>
 	</div>
 	<div class="contenue">
-		<img src="img-bg.jpg">
+		<img src="./imagesquiz/img-bg.jpg">
 		<div class="milieu">
 			
 			
@@ -252,7 +252,7 @@ if (isset($_POST['submit'])) {
 
 					
 					<div class="gauche">
-						<img src="img5.jpg" alt="avatar">
+						<img src="./imagesquiz/img5.jpg" alt="avatar">
 						<h3 style="position: relative; top: 10px;"><center>Avatar Admis</center></h3>
 
 					</div>

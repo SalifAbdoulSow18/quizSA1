@@ -115,7 +115,7 @@ session_start();
 		width: 98%;
 		height: 50px;
 		border-radius: 0px 5px 5px 0px;
-		background-image: url(ic-liste.png);
+		background-image: url(./imagesquiz/ic-liste.png);
 		background-repeat: no-repeat;
 		background-position: right;
 	}
@@ -123,7 +123,7 @@ session_start();
 		width: 98%;
 		height: 50px;
 		border-radius: 0px 5px 5px 0px;
-		background-image: url(ic-liste-active.png);
+		background-image: url(./imagesquiz/ic-liste-active.png);
 		background-repeat: no-repeat;
 		background-position: right;
 	}
@@ -132,7 +132,7 @@ session_start();
 		width: 98%;
 		height: 50px;
 		border-radius: 0px 5px 5px 0px;
-		background-image: url(ic-ajout.png);
+		background-image: url(./imagesquiz/ic-ajout.png);
 		background-repeat: no-repeat;
 		background-position: right;
 	}
@@ -196,11 +196,11 @@ session_start();
 <div class="general">
 <div class="contenant">
 	<div class="haut">
-		<img src="logo-QuizzSA.png">
+		<img src="./imagesquiz/logo-QuizzSA.png">
 		<h1>Le plaisir de jouer</h1>
 	</div>
 	<div class="contenue">
-		<img src="img-bg.jpg">
+		<img src="./imagesquiz/img-bg.jpg">
 		<div class="milieu">
 			<div class="first">
 				<h2> CREER ET PARAMETRER VOS QUIZZ</h2>
@@ -209,7 +209,7 @@ session_start();
 			<div class="milieu1">
 				<div class="limg">
 					<div class="image">
-						<img src="img5.jpg">
+						<img src="./imagesquiz/img5.jpg">
 	<h3> <?= $_SESSION['admis']['prenom'] ?> <br> <?= $_SESSION['admis']['nom'] ?></h3>
 					</div>
                     <div id="texte">

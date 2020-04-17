@@ -110,15 +110,15 @@ if (!isset($_SESSION['joueur'])) {
 <div class="general">
 <div class="contenant">
 	<div class="haut">
-		<img src="logo-QuizzSA.png">
+		<img src="./imagesquiz/logo-QuizzSA.png">
 		<h1>Le plaisir de jouer</h1>
 	</div>
 	<div class="contenue">
-		<img src="img-bg.jpg">
+		<img src="./imagesquiz/img-bg.jpg">
 		<div class="milieu">
 			<div class="first">
 				<div class="image">
-						<img src="img5.jpg">
+						<img src="./imagesquiz/img5.jpg">
 <h4><?= $_SESSION['joueur']['prenom'] ?><?= $_SESSION['joueur']['nom'] ?></h4>
  				<h3> BIENVENUE SUR LA PLATEFORME DE JEU DE QUIZZ
 JOUER ET TESTER VOTRE NIVEAU DE CULTURE GENERALE </h3>
