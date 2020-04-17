@@ -137,16 +137,55 @@ session_start();
 		background-position: right;
 	}
 	
-
-	.quiz{
+.quiz{
 		width: 60%;
-		height: 400px;
+		height: 500px;
 		position: relative;
 		left:38%;
-		border: 1px solid grey;
+		border: 1px solid white;
+		border-radius: 5px 5px 5px 5px;
 		background-color: white;
 		position: relative;
-        bottom: 300px;
+        bottom: 55%;
+	}
+	.nbr{
+		width: 100%;
+		height: 7%;
+	}
+	.nbr label{
+		color: grey;
+		font-size: 22px;
+		position: relative;
+		left: 30%;
+		top:5px;
+		}
+	
+	.quiztext{
+		width: 90%;
+		height: 85%;
+		margin:auto;
+		border: 1px solid #51BFD0;
+		border-radius: 5px 5px 5px 5px;
+		}
+     .quiztext label{
+     	font-size: 18px;
+     	margin: 9%;
+     	color: grey;
+     }
+
+	.suiv{
+		width: 100%;
+		height: 7%;
+		background-color: white;
+	}
+	.suiv button{
+		width:15%;
+		color: white;
+		border-radius: 5px;
+		position: relative;
+		left: 80%;
+		top: 5px;
+		background-color: #3CDED6; 
 	}
 </style>
 
@@ -181,7 +220,20 @@ session_start();
                     </div>
 				</div>
 				<div class="quiz">
-					
+					<div class="nbr">
+						<label>Liste Des Joueurs Par Score</label>
+						
+					</div>
+					<div class="quiztext">
+					<label>Nom</label>
+					<label>Prenom</label>
+					<label>Score</label>
+
+
+					</div>
+					<div class="suiv">
+						<button class="next">suivant</button>
+					</div>
 				</div>
 			</div>
 		</div>
