@@ -131,15 +131,14 @@ if (!isset($_SESSION['admis'])) {
 	}
 	.image{
 		width: 100%;
-		height: 100px;
-		background-color:  #51BFD0;
-	}
+		height: 150px;
+background-image: linear-gradient(white 3px, #51BFD0);	}
 	.image img{
 		width: 35%;
-		height: 90px;
+		height: 120px;
 		border-radius: 50%;
 	   position: relative;
-	   top: 5px;
+	   top: 10px;
 	}
 	.image h3{
 		float: right;
@@ -176,10 +175,11 @@ if (!isset($_SESSION['admis'])) {
 		position: relative;
 		left:38%;
 		border: 1px solid white;
+		background-image: linear-gradient(white , #C4E9EF);
 		border-radius: 5px 5px 5px 5px;
 		background-color: white;
 		position: relative;
-        bottom: 55%;
+        bottom: 65%;
 	}
 	.nbr{
 		width: 100%;
@@ -231,7 +231,6 @@ if (!isset($_SESSION['admis'])) {
 		border-radius: 5px;
 		position: relative;
 		left: 60%;
-		top: 5px;
 		background-color: #3CDED6; 
 	}
 	.prex{
@@ -240,7 +239,6 @@ if (!isset($_SESSION['admis'])) {
 		border-radius: 5px;
 		position: relative;
 		left: 5%;
-		top: 5px;
 		background-color: #3CDED6; 
 	}
 </style>

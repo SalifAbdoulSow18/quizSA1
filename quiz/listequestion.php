@@ -130,15 +130,14 @@ $data_joueur=file_get_contents("questions.json");
 	}
 	.image{
 		width: 100%;
-		height: 100px;
-		background-color:  #51BFD0;
-	}
+		height: 150px;
+background-image: linear-gradient(white 3px, #51BFD0);	}
 	.image img{
 		width: 35%;
-		height: 90px;
+		height: 120px;
 		border-radius: 50%;
 	   position: relative;
-	   top: 5px;
+	   top: 10px;
 		
 	}
 	.image h3{
@@ -179,7 +178,7 @@ $data_joueur=file_get_contents("questions.json");
 		border-radius: 5px 5px 5px 5px;
 		background-color: white;
 		position: relative;
-        bottom: 57%;
+        bottom: 65%;
 	}
 	.nbr{
 		width: 100%;
@@ -205,6 +204,7 @@ $data_joueur=file_get_contents("questions.json");
 		height: 85%;
 		margin:auto;
 		overflow: auto;
+		background-image: linear-gradient(white , #C4E9EF);
 		border: 1px solid grey;
 		border-radius: 5px 5px 5px 5px;
 		}
@@ -279,12 +279,7 @@ $data_joueur=file_get_contents("questions.json");
 						<li><?php echo  $_SESSION['Questions'][$i]['number'] ?>pts</li>
 						<li><?php echo  $_SESSION['Questions'][$i]['choise'] ?></li>
 						<li><?php
-						if ($_SESSION['Questions'][$i]['choise']=="choix texte") {?>
-		<input type="text" value="<?=$_SESSION['Questions'][$i]['add']?>" name="">				 
-						<?php
-						}
-						?>
-						<?php
+						
 					if ($_SESSION['Questions'][$i]['choise']=="choix texte") {?>
 		<input type="text" value="<?=$_SESSION['Questions'][$i]['add']?>" name="" readonly>				 
 						<?php

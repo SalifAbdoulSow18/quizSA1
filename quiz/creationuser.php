@@ -134,6 +134,8 @@ if (in_array($_FILES['file']['type'], $format)) {
 	.quiz{
 		width: 100%;
 		height: 760px;
+		overflow: auto;
+		background-image: linear-gradient(white , #C4E9EF);
 		border-radius: 5px 5px 5px 5px;
 		position: relative;
        

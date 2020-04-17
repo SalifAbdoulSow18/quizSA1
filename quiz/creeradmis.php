@@ -171,15 +171,14 @@ if (in_array($_FILES['file']['type'], $format)) {
 	}
 	.image{
 		width: 100%;
-		height: 100px;
-		background-color:  #51BFD0;
-	}
+		height: 150px;
+background-image: linear-gradient(white 3px, #51BFD0);	}
 	.image img{
 		width: 35%;
-		height: 90px;
+		height: 120px;
 		border-radius: 50%;
 	   position: relative;
-	   top: 5px;
+	   top: 10px;
 	}
 	.image h3{
 		float: right;
@@ -212,13 +211,15 @@ if (in_array($_FILES['file']['type'], $format)) {
 	.quiz{
 		width: 60%;
 		height: 550px;
+		overflow: auto;
+		background-image: linear-gradient(white , #C4E9EF);
 		position: relative;
 		left:38%;
 		border: 1px solid grey;
 		background-color: white;
 		border-radius: 5px 5px 5px 5px;
 		position: relative;
-        bottom: 300px;
+        bottom: 55%;
 	}
 	.droit{
 		width: 60%;

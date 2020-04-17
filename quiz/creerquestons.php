@@ -113,7 +113,7 @@ if (isset($_POST['submit'])) {
 	.limg{
 		width: 35%;	
 		position: relative;
-		top:15%;
+		top:40px;
 		left: 5px;
 		border: 1px solid grey;
 		border-radius: 5px 5px 5px 5px;
@@ -121,14 +121,13 @@ if (isset($_POST['submit'])) {
 	.image{
 		width: 100%;
 		height: 150px;
-		background-color:  #51BFD0;
-	}
+background-image: linear-gradient(white 3px, #51BFD0);	}
 	.image img{
 		width: 35%;
 		height: 120px;
 		border-radius: 50%;
 	   position: relative;
-	   top: 5px;
+	   top: 10px;
 		
 	}
 	.image h3{
@@ -170,8 +169,9 @@ if (isset($_POST['submit'])) {
      	right: 1%;
      }
      .gauch h2{
-     	width: 95%;
+     	width: 100%;
      	height: 8%;
+     background-image: linear-gradient(white , #C4E9EF);
      text-align: center;
 		color:  #51BFD0;
      	
@@ -180,6 +180,8 @@ if (isset($_POST['submit'])) {
 		width: 98%;
 		height: 85%;
 		margin: auto;
+		overflow: auto;
+		background-image: linear-gradient(white , #C4E9EF);
 		position: relative;
 		bottom: 10px;
 		border: 1px solid  #51BFD0;

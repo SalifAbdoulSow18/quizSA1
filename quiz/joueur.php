@@ -42,7 +42,7 @@ $data_joueur=file_get_contents("base_joueur.json");
 <style>
 	.general{
 		width: 100%;
-		height: 980px;
+		height: 1000px;
 		background-color:#525659; 
 		}
 	.contenant{
@@ -73,14 +73,13 @@ $data_joueur=file_get_contents("base_joueur.json");
 		}
 	.contenue img{
 		width: 100%;
-		height: 750px;
+		height: 780px;
 		position: absolute;
 	}
 	.milieu{
 		width: 95%;
 		margin: auto;
 		position: relative;
-		top: 5px;
 		
 	}
 	.first{
@@ -145,6 +144,8 @@ $data_joueur=file_get_contents("base_joueur.json");
 		width: 60%;
 		height: 98%;
 		float: left;
+		overflow: auto;
+		background-image: linear-gradient(white , #C4E9EF);
 		border: 1px solid #51BFD0;
 		position: relative;
 		left: 1%;
@@ -152,12 +153,12 @@ $data_joueur=file_get_contents("base_joueur.json");
 	}
 	.droite{
 		width: 35%;
-		height: 98%;
+		height: 78%;
 		float: right;
-		border: 1px solid violet;
+		background-image: linear-gradient(white , #C4E9EF);
 		position: relative;
 		right: 1%;
-		top: 1%;
+		top: 10%;
 	}
 	.affiche_quiz{
 		width: 95%;
@@ -195,7 +196,6 @@ $data_joueur=file_get_contents("base_joueur.json");
 		width: 98%;
 		height: 60%;
 		margin: auto;
-		border: 1px solid red;
 		position: relative;
 		top: 4%;
 
@@ -204,7 +204,6 @@ $data_joueur=file_get_contents("base_joueur.json");
 		width: 98%;
 		height: 7%;
 		margin: auto;
-		border: 1px solid green;
 		position: relative;
 		top: 9%;
 
@@ -213,6 +212,7 @@ $data_joueur=file_get_contents("base_joueur.json");
  width:20%;
 height:60%;
 position:relative;
+top: 10px;
 border-radius:5px;
 font-size:16px;
 color:white;
