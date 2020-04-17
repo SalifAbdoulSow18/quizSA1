@@ -27,9 +27,11 @@
             "4": "c++",
             "5": "bibi"
         },
-        "answer1": "1",
-        "answer2": "2",
-        "answer4": "4"
+         "answer": {
+            "1": "1",
+            "2": "2",
+            "4": "4"
+        }
     },
     {
         "quiz": "Quelle est la signification de ODC?",
@@ -42,5 +44,20 @@
             "4": "Organe Dans Centre"
         },
         "answer": "2"
+    },
+    {
+        "quiz": "Quels sont les animaux qui ont 4 pattes?",
+        "number": "8",
+        "choise": "choix multiple",
+        "add": {
+            "1": "poule",
+            "2": "chien",
+            "3": "oiseau",
+            "4": "lion"
+        },
+        "answer": {
+            "2": "2",
+            "4": "4"
+        }
     }
 ]

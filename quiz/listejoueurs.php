@@ -11,7 +11,7 @@ if (!isset($_SESSION['admis'])) {
 			array_multisort($columns, SORT_DESC, $array_joueur);
 			
 				$_SESSION['player']=$array_joueur;
-				$NbrParPage=10;
+				$NbrParPage=15;
 				$size=count($_SESSION['player']);
 			$NbrDePage=ceil($size/$NbrParPage);
 			
@@ -197,6 +197,7 @@ if (!isset($_SESSION['admis'])) {
 		width: 90%;
 		height: 85%;
 		margin:auto;
+		overflow: auto;
 		border: 1px solid #51BFD0;
 		border-radius: 5px 5px 5px 5px;
 		}

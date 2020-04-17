@@ -420,7 +420,7 @@ if (isset($_POST['submit'])) {
 	affichage.preventDefault();
 	nbrInput++;
 	if (type.value=='choix multiple') {
-		var newInput='<div  id="Reponse'+nbrInput+'"><input type="text" name="add['+nbrInput+']" id="resultat" class="add" required><input value="'+nbrInput+'" type="checkbox" name="answer'+nbrInput+'" class="genere"><button type="button" id="delete" onclick="deletInput('+nbrInput+')"><img src="./imagesquiz/ic-supprimer.png"></button></div>';
+		var newInput='<div  id="Reponse'+nbrInput+'"><input type="text" name="add['+nbrInput+']" id="resultat" class="add" required><input value="'+nbrInput+'" type="checkbox" name="answer['+nbrInput+']" class="genere"><button type="button" id="delete" onclick="deletInput('+nbrInput+')"><img src="./imagesquiz/ic-supprimer.png"></button></div>';
            ajout.innerHTML=ajout.innerHTML+newInput;
 	}
      if (type.value=='choix simple') {
