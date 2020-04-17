@@ -77,6 +77,7 @@ if (in_array($_FILES['file']['type'], $format)) {
 <head>
 	<title>creation user</title>
 </head>
+<div id="erreur"></div>
 <body>
 <style>
   body{
@@ -226,22 +227,22 @@ if (in_array($_FILES['file']['type'], $format)) {
 						<h2>S'INSCRIRE</h2>
 					<h4>Pour proposer des quizz</h4>
 					<hr>
-					<form action="creationuser.php" method="POST" enctype="multipart/form-data">
+					<form action="creationuser.php" method="POST" enctype="multipart/form-data" id="formulaire">
 					<label>Prenom</label>
-					<input type="text" name="prenom">
+				<input type="text" name="prenom" id="prenom" required>
 					
 					<label>Nom</label>
-					<input type="text" name="nom">
+					<input type="text" name="nom" id="nom" required>
 					
 					<label>Login</label>
-					<input type="text" name="login">
+					<input type="text" name="login" id="login" required>
 					
 					
 					<label>Password</label>
-					<input style="border: 2px solid  #51BFD0;" type="password" name="password">
+					<input style="border: 2px solid  #51BFD0;" type="password" name="password" id="pass" required>
 					
 					<label>Confirmer Password</label>
-					<input style="border: 2px solid  #51BFD0;" type="password" name="confpass">
+					<input style="border: 2px solid  #51BFD0;" type="password" name="confpass" id="confpass" required>
                        <div class="bas">
 					<h4>Avatar</h4>
 					<label for="file">choisir un fichier</label>
@@ -290,5 +291,28 @@ if (in_array($_FILES['file']['type'], $format)) {
   };
 </script>
 
+<script>
+	
+ const name=document.getElementById("prenom");
+ const name=document.getElementById("nom");
+ const name=document.getElementById("login");
+ const name=document.getElementById("pass");
+ const name=document.getElementById("confpass");
+
+ const form=document.getElementById('formulaire');
+ const errorElement=document.getElementById('erreur');
+
+ form.addEventListener('submit',(0))=>{
+ 	let messages=[];
+ 	if (name.value===''|| name.value==null){
+ 		messages.push('champ obligatoire');
+ 	}
+ 	if (messages.length>0) {
+ 		e.preventDefault();
+ 		errorElement.innerText=messages.join(',')
+ 	}
+ }
+
+</script>
 </body>
 </html>

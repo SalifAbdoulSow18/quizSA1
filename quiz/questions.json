@@ -1,0 +1,46 @@
+[
+    {
+        "quiz": "quel est le dossard de mane??",
+        "number": "4",
+        "choise": "choix simple",
+        "add": {
+            "1": "10",
+            "2": "21",
+            "3": "19"
+        },
+        "answer": "1"
+    },
+    {
+        "quiz": "quel est le club de mane??",
+        "number": "7",
+        "choise": "choix texte",
+        "add": "liverpool"
+    },
+    {
+        "quiz": "quels sont les langages de la programmation???",
+        "number": "9",
+        "choise": "choix multiple",
+        "add": {
+            "1": "java",
+            "2": "php",
+            "3": "alomo",
+            "4": "c++",
+            "5": "bibi"
+        },
+        "answer1": "1",
+        "answer2": "2",
+        "answer4": "4"
+    },
+    {
+        "quiz": "Quelle est la signification de ODC?",
+        "number": "5",
+        "choise": "choix simple",
+        "add": {
+            "1": "Organisation Digital Central",
+            "2": "Orange Digital Center",
+            "3": "Orange Different Centre",
+            "4": "Organe Dans Centre"
+        },
+        "answer": "2"
+    }
+]

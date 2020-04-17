@@ -47,6 +47,7 @@ if (isset($_POST['submit'])) {
 <head>
 	<title>0.Page de connexion</title>
 </head>
+<div id="erreur"></div>
 <body>
 <style>
 	.general{
@@ -168,12 +169,12 @@ if (isset($_POST['submit'])) {
 				<h2 style="font-size: 28px;position: relative; right:5%;">x</h2>
 			</div>
 			<div class="formulaire">
-				<form method="POST">
+				<form method="POST" id="formulaire">
 					
-					<input class="text" type="text" name="login" placeholder="Login">
+					<input class="text" type="text" name="login" placeholder="Login" id="login" required>
 					
 					
-					<input class="text2" type="password" name="password" placeholder="Password">
+					<input class="text2" type="password" name="password" placeholder="Password" id="pass" required>
 					
 					<div  class="connex">
 					<input type="submit" name="submit" value="connexion">
@@ -185,5 +186,27 @@ if (isset($_POST['submit'])) {
 	</div>
 </div>
 </div>
+
+<script>
+	
+ 
+ const name=document.getElementById("login");
+ const name=document.getElementById("pass");
+
+ const form=document.getElementById('formulaire');
+ const errorElement=document.getElementById('erreur');
+
+ form.addEventListener('submit',(0))=>{
+ 	let messages=[];
+ 	if (name.value===''|| name.value==null){
+ 		messages.push('champ obligatoire');
+ 	}
+ 	if (messages.length>0) {
+ 		e.preventDefault();
+ 		errorElement.innerText=messages.join(',')
+ 	}
+ }
+
+</script>
 </body>
 </html>

@@ -3,6 +3,22 @@ session_start();
 if (!isset($_SESSION['admis'])) {
 	header("Location:pagedeconnex.php");
 }
+
+if (isset($_POST['submit'])) {
+ if (empty($_POST)) {
+   	$erreur= "Your message has not been sent. Please complete all required!!!";
+ }
+ else{
+ 	$tabquiz=array();
+ 	unset($_POST['submit']);
+ 	$tabquiz=$_POST;
+ 		  $js=file_get_contents("questions.json");
+		  $jsquiz=json_decode($js,true);
+		  $jsquiz[]=$tabquiz;
+		   $jsrenvoi=json_encode($jsquiz,JSON_PRETTY_PRINT);
+		  file_put_contents('questions.json', $jsrenvoi);
+ }
+ }
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,6 +26,7 @@ if (!isset($_SESSION['admis'])) {
 	<meta charset="utf-8">
 	<title>4. Creer Question</title>
 </head>
+<div id="erreur"></div>
 <body>
 	
 <style>
@@ -170,74 +187,162 @@ if (!isset($_SESSION['admis'])) {
 		
 	}
 	.question{
-		width: 100%;
+		width: 98%;
 		height: 15%;
+		margin: auto;
+		position: absolute;
 	}
 	.question label{
    		width: 15%;
    		height: 50%;
-   		font-size: 18px;
+   		font-size: 20px;
    		float: left;
 		position: relative;
 		top: 25%;
-		
+		left: 1%;
 	}
 	.question textarea{
 		width: 70%;
 		height:90%;
 		float: right;
+		border-bottom-color: #51BFD0;
+		background-color: #D1D1D1;
 		position: relative;
-		top: 5%;
-		
+		top: 1%;
 	}
 	.nbre{
-		width: 100%;
+		width: 98%;
 		height: 7.5%;
-		position: relative;
-		top: 3%;
+		margin: auto;
+		position: absolute;
+		top: 16%;
 	}
 	.nbre label{
-		font-size: 18px;
+		font-size: 20px;
+		position: relative;
+		top: 10%;
+		left: 1%;
 	}
-	.nbre select{
+	.nbre input{
 		width:15%;
 		height: 60%;
+		background-color: #D1D1D1;
+		border-bottom-color: #51BFD0;
+		position: relative;
+		left: 25%;
 	}
 	.typ{
-		width: 100%;
+		width: 98%;
 		height: 7.5%;
-		position: relative;
-		top: 3%;
+		margin: auto;
+		position: absolute;
+		top:25%;
 	}
 	.typ label{
 		width: 10%;
 		font-size: 18px;
+		position: relative;
+		left: 1%;
 	}
 	.typ select{
 		width: 53%;
-		height: 100%;
+		height: 95%;
+		background-color: whitesmoke;
+		color: #51BFD0;
 		margin: 1%;
-		
+
 	}
+	
+
 	.typ img{
 		width: 10%;
-		height: 100%;
-		margin: 1%;
+		height: 95%;
+		position: absolute;
+		top: 5%;
 	}
-	.repon{
-		width: 100%;
-		height:10%;
-		position: relative;
-		top: 8%;
+	#ajout{
+		width: 98%;
+		height:8%;
+ 		position: absolute;
+ 		top: 35%;
  	}
- 	.save button{
+ 	#newdiv{
+ 		width: 100%;
+		height:100%;
+ 	}
+ 	.add{
+ 	width: 50%;
+ 	height: 40px;
+ 	position: relative;
+ 	left: 22%;
+ 	}
+ 	.add1{
+ 	width: 50%;
+ 	height: 65px;
+ 	margin: 2%;
+ 	position: relative;
+ 	left: 22%;
+ 	}
+ 	.genere{
+ 		width: 5%; 
+ 		height: 30px; 
+ 		background-color: red;
+ 		position: relative;
+		top: 9px;
+		left: 22%;
+
+ 	}
+ 	#ajout button{
+ 		width: 5%; 
+ 		height: 40%; 
+ 		position: relative;
+ 		top: 8%;
+ 		left: 22%;
+ 	}
+ 	#ajout button img{
+ 		width: 100%; 
+ 		height: 100%; 
+ 		padding: 5%;
+ 		position: relative;
+ 		
+ 	}
+	.repon{
+		width: 98%;
+		height:8%;
+		position: absolute;
+		top: 35%;
+ 	}
+ 	.repon label{
+ 		width: 15%; 
+ 		font-size: 18px;
+ 		position: relative;
+		left: 1%;
+ 	}
+ 	.champ-reponse{
+ 		width: 50%;
+ 	 height: 55%;
+ 	}
+ 	.choix{
+ 		width: 5%; 
+ 		height: 40%; 
+ 		position: relative;
+		top: 7%;
+ 	}
+ 	.repon img{
+ 		width: 5%; 
+ 		height: 40%; 
+ 		position: relative;
+ 		top: 7%;
+ 	}
+ 	.save input{
  		padding: 5px;
  		color: white;
  		background-color:  #51BFD0;
- 		position: relative;
- 		left: 85%;
- 		top: 370px;
+ 		position: absolute;
+ 		left: 75%;
+ 		top: 95%;
  	}	
+
 </style>
 
 <div class="general">
@@ -270,33 +375,33 @@ if (!isset($_SESSION['admis'])) {
 				<div class="gauch">
 				<h2>PARAMETRER VOTRE QUESTION</h2>
 				<div class="quiz">
+				<form method="POST" action="creerquestons.php" id="formulaire">
 					<div class="question">
 					<label>Questions</label>
-					<textarea  name="quiz" id="quiz"></textarea>
+					<textarea  name="quiz" id="quiz" required></textarea>
 					</div>
 					<div class="nbre">
 					<label>Nbre de Points</label>
-					<select></select>
+					<input type="number" id="number" name="number" min="1" max="15" required>
 					</div>
 					<div class="typ">
 					<label>Type de reponse</label>
-					<select>
-						<option>Donner le type de reponse</option>
+					<select id="choise" name="choise" required>
+				<option>Donner le type de reponse</option>
+				<option value="choix texte">Choix texte</option>
+				<option value="choix simple">Choix simple</option>
+				<option value="choix multiple">Choix multiple</option>
 					</select>
-					<img src="./imagesquiz/ic-ajout-réponse.png">
+					<a href="" id="plus"><img src="./imagesquiz/ic-ajout-réponse.png"></a>
 					</div>
-					<div class="repon">
-				<label style="width: 15%; font-size: 18px;">Reponse 1</label>
-					<input style="width: 50%; height: 55%;" type="text" name="repons">
-
-					<input style="width: 5%; height: 40%; position: relative;
-					top: 7%;"  type="checkbox" name="one">
-					<input  style="width: 5%; height: 40%; position: relative;top: 7%;" type="radio" name="two">
-					<img  style="width: 5%; height: 40%; position: relative;top: 7%;" src="./imagesquiz/ic-supprimer.png">
+					<div id="ajout">
+						
 					</div>
+					
 					<div class="save">
-						<button>Enregistrer</button>
+						<input type="submit" name="submit" value="Enregistrer">
 					</div>
+					</form>
 					</div>
 				</div>
 			</div>
@@ -304,5 +409,59 @@ if (!isset($_SESSION['admis'])) {
 	</div>
 </div>
 </div>
+
+<script>
+	var nbrInput=0;
+	var bnt=document.getElementById('plus');
+    var type= document.getElementById('choise');
+    var ajout=document.getElementById('ajout');
+   bnt.addEventListener('click',recuperation);
+    function recuperation(affichage){
+	affichage.preventDefault();
+	nbrInput++;
+	if (type.value=='choix multiple') {
+		var newInput='<div  id="Reponse'+nbrInput+'"><input type="text" name="add['+nbrInput+']" id="resultat" class="add" required><input value="'+nbrInput+'" type="checkbox" name="answer'+nbrInput+'" class="genere"><button type="button" id="delete" onclick="deletInput('+nbrInput+')"><img src="./imagesquiz/ic-supprimer.png"></button></div>';
+           ajout.innerHTML=ajout.innerHTML+newInput;
+	}
+     if (type.value=='choix simple') {
+     	var newInput='<div  id="Reponse'+nbrInput+'"><input type="text" name="add['+nbrInput+']" id="resultat" class="add" required><input value="'+nbrInput+'" type="radio" name="answer" class="genere"><button type="button" id="delete" onclick="deletInput('+nbrInput+')"><img src="./imagesquiz/ic-supprimer.png"></button></div>';
+           ajout.innerHTML=ajout.innerHTML+newInput;
+     }    
+     if (type.value=='choix texte') {
+     	var newInput='<input type="text" name="add" id="resultat" class="add1" required>';
+           ajout.innerHTML=ajout.innerHTML+newInput;
+     }  
+      
+       }
+      
+       function deletInput(n){
+       var effacer=document.getElementById('Reponse'+n);
+       effacer.remove();
+       }
+</script>
+
+
+<script>
+	
+ const name=document.getElementById("quiz");
+ const name=document.getElementById("number");
+ const name=document.getElementById("choise");
+ const name=document.getElementById("resultat");
+
+ const form=document.getElementById('formulaire');
+ const errorElement=document.getElementById('erreur');
+
+ form.addEventListener('submit',(0))=>{
+ 	let messages=[];
+ 	if (name.value===''|| name.value==null){
+ 		messages.push('champ obligatoire');
+ 	}
+ 	if (messages.length>0) {
+ 		e.preventDefault();
+ 		errorElement.innerText=messages.join(',')
+ 	}
+ }
+
+</script>
 </body>
 </html>
