@@ -1,9 +1,39 @@
 
 <?php
 session_start();
+$pageactuelle="";
 if (!isset($_SESSION['admis'])) {
 	header("Location:pagedeconnex.php");
 }
+	$data_joueur=file_get_contents("base_joueur.json");
+		$array_joueur=json_decode($data_joueur, true);
+				$columns=array_column($array_joueur, 'score');
+			array_multisort($columns, SORT_DESC, $array_joueur);
+			
+				$_SESSION['player']=$array_joueur;
+				$NbrParPage=10;
+				$size=count($_SESSION['player']);
+			$NbrDePage=ceil($size/$NbrParPage);
+			
+					if (isset($_POST['suiv'])) {
+					$pageactuelle=intval($_POST['pageActuelle']);
+					$pageactuelle++;
+					
+						if ($pageactuelle>$NbrDePage) {
+							$pageactuelle=$NbrDePage;
+						}
+				}elseif (isset($_POST['suiv'])) {
+					$pageactuelle=intval($_POST['pageActuelle']);
+					$pageactuelle--;
+					
+				}
+
+				else{
+					$pageactuelle=1;
+				}
+			
+			$IndiceDeDepart=($pageactuelle-1)*$NbrParPage;
+
 ?>
 
 
@@ -170,10 +200,23 @@ if (!isset($_SESSION['admis'])) {
 		border: 1px solid #51BFD0;
 		border-radius: 5px 5px 5px 5px;
 		}
-     .quiztext label{
+    .quiztext table{
+			margin: auto;
+		}
+     .quiztext table th{
      	font-size: 18px;
-     	margin: 9%;
+     	text-align: center;
+		width:20%; 
+		margin: auto;
      	color: grey;
+     	border: 1px solid grey;
+     }
+     .quiztext table tr td{
+     	font-size: 18px;
+     	text-align: center;
+     	color: grey;
+     	margin: auto;
+     	 border: 1px solid grey;
      }
 
 	.suiv{
@@ -181,12 +224,21 @@ if (!isset($_SESSION['admis'])) {
 		height: 7%;
 		background-color: white;
 	}
-	.suiv button{
+	.next{
 		width:15%;
 		color: white;
 		border-radius: 5px;
 		position: relative;
-		left: 80%;
+		left: 60%;
+		top: 5px;
+		background-color: #3CDED6; 
+	}
+	.prex{
+		width:20%;
+		color: white;
+		border-radius: 5px;
+		position: relative;
+		left: 5%;
 		top: 5px;
 		background-color: #3CDED6; 
 	}
@@ -228,15 +280,42 @@ if (!isset($_SESSION['admis'])) {
 						
 					</div>
 					<div class="quiztext">
-					<label>Nom</label>
-					<label>Prenom</label>
-					<label>Score</label>
+					<table>
+							<thead>
+								<th>Nom</th>
+								<th>prenom</th>
+								<th>Score</th>
+							</thead>
+				<tbody>
+					<?php
+	for ($i=$IndiceDeDepart; $i <($IndiceDeDepart+$NbrParPage); $i++) {
+						if (array_key_exists($i, $_SESSION['player'])) {
+						?> 
+					
 
+						<tr>
+							<td><?php echo $_SESSION['player'][$i]['nom']?></td>
+								
+							<td><?php echo $_SESSION['player'][$i]['prenom']?></td>
+							
+							<td><?php echo $_SESSION['player'][$i]['score']?></td>
+						</tr>
+					<?php
+					}
+					}
+					?>
+					</tbody>
+					</table>
+					</div>
+					<form method="POST">
+						<div class="suiv">
+						<input type="hidden" name="pageActuelle" value="<?php echo $pageactuelle ?>">
+						<input type="submit" name ="prec" class="prex" value="precedent">	
+						<input type="submit" name ="suiv" class="next" value="suivant">
 
 					</div>
-					<div class="suiv">
-						<button class="next">suivant</button>
-					</div>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>

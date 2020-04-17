@@ -16,6 +16,7 @@ if (in_array($_FILES['file']['type'], $format)) {
 		$tab ['prenom']=$_POST['prenom'];
 		$tab ['login']=$_POST['login'];
 		$tab ['pass']=$_POST['password'];
+		$tab['score']="0";
 		$confpass=$_POST['confpass'];
 		$tab['avatar']=$photo;
 
