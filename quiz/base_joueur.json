@@ -1,1 +1,34 @@
-[{"nom":"SOW","prenom":"Salif Abdoul","login":"abdoul","pass":"salif","avatar":".\/imagesquiz\/UserImages\/Sashome.jpg","score":"350"},{"nom":"SOW","prenom":"Mariama","login":"mariama","pass":"sow","avatar":".\/imagesquiz\/UserImages\/SAS.jpg","score":"130"},{"nom":"DIA","prenom":"amina","login":"amina","pass":"salif","avatar":".\/imagesquiz\/UserImages\/Sashome.jpg","score":"1000"}]
+[
+    {
+        "nom": "SOW",
+        "prenom": "Salif Abdoul",
+        "login": "abdoul",
+        "pass": "salif",
+        "avatar": ".\/imagesquiz\/UserImages\/Sashome.jpg",
+        "score": "30"
+    },
+    {
+        "nom": "SOW",
+        "prenom": "Mariama",
+        "login": "mariama",
+        "pass": "sow",
+        "avatar": ".\/imagesquiz\/UserImages\/SAS.jpg",
+        "score": 28
+    },
+    {
+        "nom": "DIA",
+        "prenom": "amina",
+        "login": "amina",
+        "pass": "salif",
+        "avatar": ".\/imagesquiz\/UserImages\/Sashome.jpg",
+        "score": "17"
+    },
+    {
+        "nom": "academique",
+        "prenom": "Sonatel",
+        "login": "joueur",
+        "pass": "joueur",
+        "score": 7,
+        "avatar": ".\/imagesquiz\/UserImages\/20200507181417.jpg"
+    }
+]

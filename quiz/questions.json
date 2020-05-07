@@ -59,5 +59,38 @@
             "2": "2",
             "4": "4"
         }
+    },
+    {
+        "quiz": "Il y a t-il combien de sourate dans le Saint Coran?",
+        "number": "8",
+        "choise": "choix simple",
+        "add": {
+            "1": "104",
+            "2": "114",
+            "3": "141"
+        },
+        "answer": "2"
+    },
+    {
+        "quiz": "En 2014, avec quelle equipe cr7 a inscrit son 15eme but de la saison en UEFA?",
+        "number": "3",
+        "choise": "choix simple",
+        "add": {
+            "1": "Schalk04",
+            "2": "BVB",
+            "3": "Bayern.M"
+        },
+        "answer": "3"
+    },
+    {
+        "quiz": "Qui etait le passeur decisif du 15eme but de cr7 en UEFA 2014?",
+        "number": "5",
+        "choise": "choix simple",
+        "add": {
+            "1": "Benzema",
+            "2": "Bale",
+            "3": "Di Maria"
+        },
+        "answer": "2"
     }
 ]

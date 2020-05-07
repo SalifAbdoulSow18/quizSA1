@@ -49,7 +49,7 @@ if (in_array($_FILES['file']['type'], $format)) {
 		 	}
 		 	}
 	if ($_POST['login']!=$value['login']) {
-			header("Location:pagedeconnex.php");
+			header("Location:index.php");
 
 		$succes= "Thank you, Your message has been sent successfully!!! ";
 		

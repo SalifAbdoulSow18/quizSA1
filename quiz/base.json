@@ -1,1 +1,16 @@
-[{"nom":"SOW","prenom":"Salif Abdoul","login":"salif","pass":"abdoul","avatar":".\/imagesquiz\/UserImages\/SAS.jpg"}]
+[
+    {
+        "nom": "SOW",
+        "prenom": "Salif Abdoul",
+        "login": "salif",
+        "pass": "abdoul",
+        "avatar": ".\/imagesquiz\/UserImages\/SAS.jpg"
+    },
+    {
+        "nom": "Sonatel",
+        "prenom": "Academique",
+        "login": "admin",
+        "pass": "admin",
+        "avatar": ".\/imagesquiz\/UserImages\/20200507190237.jpeg"
+    }
+]

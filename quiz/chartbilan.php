@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['admis'])) {
-	header("Location:pagedeconnex.php");
+	header("Location:index.php");
 }
 
 $data_joueur=file_get_contents("base_joueur.json");

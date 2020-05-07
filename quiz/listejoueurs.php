@@ -3,7 +3,7 @@
 session_start();
 $pageactuelle="";
 if (!isset($_SESSION['admis'])) {
-	header("Location:pagedeconnex.php");
+	header("Location:index.php");
 }
 	$data_joueur=file_get_contents("base_joueur.json");
 		$array_joueur=json_decode($data_joueur, true);
@@ -289,7 +289,7 @@ background-image: linear-gradient(white 3px, #51BFD0);	}
 				<tbody>
 					<?php
 	for ($i=$IndiceDeDepart; $i <($IndiceDeDepart+$NbrParPage); $i++) {
-						if (array_key_exists($i, $_SESSION['player'])) {
+						if (isset($_SESSION['player'][$i]) ) {
 						?> 
 					
 
@@ -310,7 +310,12 @@ background-image: linear-gradient(white 3px, #51BFD0);	}
 					<form method="POST">
 						<div class="suiv">
 						<input type="hidden" name="pageActuelle" value="<?php echo $pageactuelle ?>">
-						<input type="submit" name ="prec" class="prex" value="precedent">	
+					<?php
+    					if ($pageactuelle>1) {?>
+						<input type="submit" name ="prec" class="prex" value="precedent">
+					<?php
+    				}
+    				?>
 						<input type="submit" name ="suiv" class="next" value="suivant">
 
 					</div>

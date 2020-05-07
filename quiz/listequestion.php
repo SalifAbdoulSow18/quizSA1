@@ -1,9 +1,15 @@
 <?php
 session_start();
 if (!isset($_SESSION['admis'])) {
-	header("Location:pagedeconnex.php");
+	header("Location:index.php");
 }
 
+//Pour afficher le nombre de question par jeu
+	    $qui=file_get_contents('quizParJeu.json');
+		$array_qui=json_decode($qui, true);
+	    $_SESSION['NbrGame']=$array_qui['NQuestionParJeu'];
+
+//Pour afficher les Question dans la liste des questions
 $data_joueur=file_get_contents("questions.json");
 		$array_joueur=json_decode($data_joueur, true);
 				
@@ -47,11 +53,7 @@ if (!empty($_POST['num'])) {
 
 		}
 
-		$qui=file_get_contents('quizParJeu.json');
-		$array_qui=json_decode($qui, true);
-		foreach ($array_qui as $value) {
-			$_SESSION['NbrGame']=$value;
-		}
+		
 }
 }
 
@@ -299,7 +301,7 @@ background-image: linear-gradient(white 3px, #51BFD0);	}
 					<div class="quiztext">
 						<?php
 					for ($i=$IndiceDeDepart; $i <($IndiceDeDepart+$NbrParPage) ; $i++) {
-						if (array_key_exists($i, $_SESSION['Questions'])) {
+						if (isset($_SESSION['Questions'][$i]) ) {
 						 ?>
 						 <ul>
 						<li><?php echo  $_SESSION['Questions'][$i]['quiz'] ?></li>
@@ -349,7 +351,12 @@ background-image: linear-gradient(white 3px, #51BFD0);	}
 						<form method="POST">
 						<div class="suiv">
 						<input type="hidden" name="pageActuelle" value="<?php echo $pageactuelle ?>">
-						<input type="submit" name ="prec" class="prex" value="precedent">	
+					<?php
+    					if ($pageactuelle>1) {?>
+						<input type="submit" name ="prec" class="prex" value="precedent">
+					<?php
+    				}
+    				?>	
 						<input type="submit" name ="suiv" class="next" value="suivant">
 					</div>
 
